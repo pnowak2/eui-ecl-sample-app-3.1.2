@@ -69,3 +69,10 @@
 
     <ecl-footer-harmonised group="2"></ecl-footer-harmonised>
 </ecl-app-harmonised>
+
+<eui-growl [value]="uxAppShellService.growlMessages"
+    [sticky]="uxAppShellService.isGrowlSticky"
+    [life]="uxAppShellService.growlLife"
+    [position]="uxAppShellService.growlPosition"
+    (clicked)="uxAppShellService.growlCallback()">
+</eui-growl>

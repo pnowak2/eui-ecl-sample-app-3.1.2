@@ -5,7 +5,7 @@ import {
     UserState,
 } from '@eui/core';
 import { Observable, Subscription } from 'rxjs';
-
+import { UxAppShellService } from '@eui/core';
 import {
     EclMenuItemSelectEvent,
     EclSiteHeaderLoginEvent,
@@ -24,9 +24,9 @@ export class AppComponent implements OnDestroy {
     subs: Subscription[] = [];
 
     isLoggedIn = false;
-
     constructor(
         private store: Store<any>,
+        public uxAppShellService: UxAppShellService
     ) {
         this.userState = <any>this.store.select(getUserState);
         this.subs.push(this.userState.subscribe((user: UserState) => {
