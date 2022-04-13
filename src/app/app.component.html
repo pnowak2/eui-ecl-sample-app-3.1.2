@@ -1,0 +1,71 @@
+<ecl-app-harmonised>
+    <ecl-site-header-harmonised group="2">
+        <div eclSiteHeaderEnvironment>Environment</div>
+
+        <ecl-site-header-harmonised-action>
+            <ecl-site-header-harmonised-login
+                [isLoggedIn]="isLoggedIn"
+                (login)="onLogin($event)">
+                <p eclSiteHeaderHarmonisedLoginDescription>
+                    {{ 'ecl.site-header.LOGGED-IN-AS' | translate }} {{ userInfos?.fullName }}
+                </p>
+                <hr eclSiteHeaderHarmonisedLoginSeparator />
+                <a eclLink variant="standalone" href="#" (click)="onLogout($event)">
+                    {{ 'ecl.site-header.LOGOUT' | translate }}
+                </a>
+            </ecl-site-header-harmonised-login>
+
+            <ecl-site-header-harmonised-language></ecl-site-header-harmonised-language>
+            <ecl-site-header-harmonised-search (search)="onSearch($event)"></ecl-site-header-harmonised-search>
+        </ecl-site-header-harmonised-action>
+
+        <ecl-menu group="2" (menuItemSelect)="onMenuItemSelected($event)">
+            <ecl-menu-item label="Home" [isCurrent]="true"></ecl-menu-item>
+            <ecl-menu-item label="Item 1">
+                <ecl-menu-mega>
+                    <ecl-menu-mega-item label="Item 1.1"></ecl-menu-mega-item>
+                    <ecl-menu-mega-item label="Item 1.2"></ecl-menu-mega-item>
+                    <ecl-menu-mega-item label="Item 1.3"></ecl-menu-mega-item>
+                </ecl-menu-mega>
+            </ecl-menu-item>
+
+            <ecl-menu-item label="Item 2">
+                <ecl-menu-mega>
+                    <ecl-menu-mega-item label="Item 2.1"></ecl-menu-mega-item>
+                    <ecl-menu-mega-item label="Item 2.2"></ecl-menu-mega-item>
+                    <ecl-menu-mega-item label="Item 2.3"></ecl-menu-mega-item>
+                </ecl-menu-mega>
+            </ecl-menu-item>
+
+            <ecl-menu-item label="Item 3">
+                <ecl-menu-mega>
+                    <ecl-menu-mega-item label="Item 3.1"></ecl-menu-mega-item>
+                    <ecl-menu-mega-item label="Item 3.2"></ecl-menu-mega-item>
+                    <ecl-menu-mega-item label="Item 3.3"></ecl-menu-mega-item>
+                </ecl-menu-mega>
+            </ecl-menu-item>
+        </ecl-menu>
+    </ecl-site-header-harmonised>
+
+    <ecl-page-header-harmonised group="2">
+        <ecl-breadcrumb-harmonised>
+            <ecl-breadcrumb-harmonised-segment>Home</ecl-breadcrumb-harmonised-segment>
+            <ecl-breadcrumb-harmonised-segment>European Commission</ecl-breadcrumb-harmonised-segment>
+            <ecl-breadcrumb-harmonised-segment [isCurrentPage]="true">ECL</ecl-breadcrumb-harmonised-segment>
+        </ecl-breadcrumb-harmonised>
+
+        <div eclPageHeaderHarmonisedMeta>
+            Auto generated template
+        </div>
+        <h1 eclPageHeaderHarmonisedTitle>Europa Component Library </h1>
+        <p eclPageHeaderHarmonisedDescription>
+            The Europa Component Library (ECL) is a comprehensive style guide containing the design elements and visual standards that make up all Europa websites and applications.
+        </p>
+    </ecl-page-header-harmonised>
+
+    <div class="ecl-u-pv-xl">
+        <router-outlet></router-outlet>
+    </div>
+
+    <ecl-footer-harmonised group="2"></ecl-footer-harmonised>
+</ecl-app-harmonised>
