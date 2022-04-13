@@ -51,6 +51,7 @@
               ],
               "styles": [
                 "node_modules/@eui/ecl-styles/dist/styles/eui-ecl-ec.css",
+                "node_modules/@eui/styles/dist/styles/eui.css",
                 "src/styles.scss"
               ]
             },
